@@ -1,0 +1,1237 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genspark スーパーエージェント完全活用ガイド</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pros-cons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .pros-cons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="text-center">
+                <h1 class="text-5xl font-bold mb-6">Genspark スーパーエージェント</h1>
+                <h2 class="text-2xl font-light mb-8">完全活用ガイド</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    次世代自律型AIエージェントの実際の使い方から応用テクニックまで、初心者にもわかりやすく徹底解説
+                </p>
+                <div class="mt-8 flex justify-center items-center space-x-4">
+                    <div class="bg-white bg-opacity-20 rounded-full px-4 py-2">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>2025年4月リリース</span>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-full px-4 py-2">
+                        <i class="fas fa-star mr-2"></i>
+                        <span>無料プランあり</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="bg-white border-b sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex flex-wrap justify-center space-x-6 text-sm">
+                <a href="#overview" class="text-gray-600 hover:text-blue-600 transition-colors">概要</a>
+                <a href="#features" class="text-gray-600 hover:text-blue-600 transition-colors">主な機能</a>
+                <a href="#getting-started" class="text-gray-600 hover:text-blue-600 transition-colors">始め方</a>
+                <a href="#use-cases" class="text-gray-600 hover:text-blue-600 transition-colors">活用事例</a>
+                <a href="#pricing" class="text-gray-600 hover:text-blue-600 transition-colors">料金プラン</a>
+                <a href="#comparison" class="text-gray-600 hover:text-blue-600 transition-colors">他ツールとの比較</a>
+                <a href="#tips" class="text-gray-600 hover:text-blue-600 transition-colors">活用のコツ</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-8">
+        <!-- Overview Section -->
+        <section id="overview" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-robot text-blue-600 mr-3"></i>
+                    Genspark スーパーエージェントとは？
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <p class="text-lg text-gray-700 mb-4">
+                            Genspark スーパーエージェントは、2025年4月にMainFunc社によってリリースされた<strong>次世代自律型AIエージェント</strong>です。単なるAI検索エンジンではなく、ユーザーの指示に基づいて<strong>自ら考え、計画し、実行する</strong>革新的なAIシステムです。
+                        </p>
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+                            <p class="text-blue-800">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                従来のAIとは異なり、複雑なタスクを段階的に分解し、必要なツールを自動選択して目標を達成します
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4">核となる3つの特徴</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-brain text-purple-600 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>驚異の自律性</strong><br>
+                                    <span class="text-sm text-gray-600">簡単な指示だけで複雑なタスクを自動実行</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-tools text-green-600 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>圧倒的な多才さ</strong><br>
+                                    <span class="text-sm text-gray-600">9種類のLLM + 80以上のツールを連携</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-trophy text-yellow-600 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>世界最高水準の性能</strong><br>
+                                    <span class="text-sm text-gray-600">GAIAベンチマークで最高スコアを記録</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Performance Benchmark -->
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold mb-4">性能比較（GAIAベンチマーク）</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-white">
+                                <tr>
+                                    <th class="px-4 py-3 text-left font-semibold">レベル</th>
+                                    <th class="px-4 py-3 text-center font-semibold text-blue-600">Genspark Super Agent</th>
+                                    <th class="px-4 py-3 text-center font-semibold">manus.ai</th>
+                                    <th class="px-4 py-3 text-center font-semibold">OpenAI Deep Research</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="bg-white">
+                                    <td class="px-4 py-3 font-medium">Level 1 (基本)</td>
+                                    <td class="px-4 py-3 text-center bg-blue-50 font-bold text-blue-600">87.8%</td>
+                                    <td class="px-4 py-3 text-center">86.5%</td>
+                                    <td class="px-4 py-3 text-center">74.3%</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-4 py-3 font-medium">Level 2 (中級)</td>
+                                    <td class="px-4 py-3 text-center bg-blue-50 font-bold text-blue-600">72.7%</td>
+                                    <td class="px-4 py-3 text-center">70.1%</td>
+                                    <td class="px-4 py-3 text-center">69.1%</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-4 py-3 font-medium">Level 3 (複雑)</td>
+                                    <td class="px-4 py-3 text-center bg-blue-50 font-bold text-blue-600">58.8%</td>
+                                    <td class="px-4 py-3 text-center">57.2%</td>
+                                    <td class="px-4 py-3 text-center">47.6%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-cogs text-blue-600 mr-3"></i>
+                    主な機能とできること
+                </h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Super Agent -->
+                    <div class="feature-card bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 border border-blue-200">
+                        <div class="text-blue-600 text-3xl mb-4">
+                            <i class="fas fa-user-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-blue-800">スーパーエージェント</h3>
+                        <p class="text-gray-700 mb-4">複雑なタスクを自律的に処理する包括的AIアシスタント</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 旅行計画の立案と予約</li>
+                            <li>• スライド・動画生成</li>
+                            <li>• データ分析とレポート作成</li>
+                            <li>• 市場調査と競合分析</li>
+                        </ul>
+                    </div>
+
+                    <!-- Deep Research -->
+                    <div class="feature-card bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6 border border-green-200">
+                        <div class="text-green-600 text-3xl mb-4">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-green-800">ディープリサーチ</h3>
+                        <p class="text-gray-700 mb-4">100万語以上の情報を分析して深い調査を実行</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 学術論文やニュースの分析</li>
+                            <li>• 複数情報源の統合</li>
+                            <li>• 信頼性の高いデータ収集</li>
+                            <li>• 専門分野の詳細調査</li>
+                        </ul>
+                    </div>
+
+                    <!-- Call for Me -->
+                    <div class="feature-card bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6 border border-purple-200">
+                        <div class="text-purple-600 text-3xl mb-4">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-purple-800">通話代行</h3>
+                        <p class="text-gray-700 mb-4">AIが実際に電話をかけて予約などを代行</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• レストラン予約</li>
+                            <li>• アレルギー情報の伝達</li>
+                            <li>• 座席の希望確認</li>
+                            <li>• 自然な音声での会話</li>
+                        </ul>
+                    </div>
+
+                    <!-- Data Search -->
+                    <div class="feature-card bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6 border border-orange-200">
+                        <div class="text-orange-600 text-3xl mb-4">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-orange-800">データ検索</h3>
+                        <p class="text-gray-700 mb-4">複数の情報源を同時に調査して結果をSparkpageに整理</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 旅行・交通情報の収集</li>
+                            <li>• eコマース商品比較</li>
+                            <li>• 金融データの分析</li>
+                            <li>• 地震などの最新情報</li>
+                        </ul>
+                    </div>
+
+                    <!-- Fact Check -->
+                    <div class="feature-card bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-6 border border-red-200">
+                        <div class="text-red-600 text-3xl mb-4">
+                            <i class="fas fa-shield-check"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-red-800">ファクトチェック</h3>
+                        <p class="text-gray-700 mb-4">複数情報源を比較して正確性を検証</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 情報の信頼性確認</li>
+                            <li>• 矛盾点の自動検出</li>
+                            <li>• 誤情報の排除</li>
+                            <li>• 情報源の信頼度評価</li>
+                        </ul>
+                    </div>
+
+                    <!-- Creative Content -->
+                    <div class="feature-card bg-gradient-to-br from-pink-50 to-pink-100 rounded-lg p-6 border border-pink-200">
+                        <div class="text-pink-600 text-3xl mb-4">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-pink-800">クリエイティブ制作</h3>
+                        <p class="text-gray-700 mb-4">動画、アニメーション、スライドの自動生成</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• レシピ動画の作成</li>
+                            <li>• アニメーション制作</li>
+                            <li>• プレゼン資料の生成</li>
+                            <li>• BGM・効果音の追加</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                        他のAIツールとの違い
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-green-600 mb-2">Genspark スーパーエージェント</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>✅ 複数タスクの自律実行</li>
+                                <li>✅ 実際の電話予約が可能</li>
+                                <li>✅ 80以上のツールを統合</li>
+                                <li>✅ 9種類のLLMを使い分け</li>
+                                <li>✅ 動画・アニメ制作まで対応</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-600 mb-2">従来のAIツール</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>⚠️ 単一タスクの処理</li>
+                                <li>⚠️ 情報検索・回答のみ</li>
+                                <li>⚠️ 限られたツール連携</li>
+                                <li>⚠️ 単一モデルでの処理</li>
+                                <li>⚠️ テキスト中心の機能</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Getting Started Section -->
+        <section id="getting-started" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-rocket text-blue-600 mr-3"></i>
+                    始め方の完全ガイド
+                </h2>
+
+                <div class="space-y-8">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                                1
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold mb-3">アカウント作成</h3>
+                            <p class="text-gray-700 mb-4">
+                                <a href="https://genspark.ai" class="text-blue-600 hover:underline">Genspark公式サイト</a>にアクセスし、無料アカウントを作成します。メールアドレスまたはGoogleアカウントで簡単に登録できます。
+                            </p>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                                <p class="text-blue-800 text-sm">
+                                    <i class="fas fa-info-circle mr-2"></i>
+                                    登録は完全無料で、クレジットカード情報も不要です
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                                2
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold mb-3">スーパーエージェントにアクセス</h3>
+                            <p class="text-gray-700 mb-4">
+                                ログイン後、メニューから「Super Agent」を選択します。初回アクセス時には簡単なチュートリアルが表示されます。
+                            </p>
+                            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+                                <p class="text-yellow-800 text-sm">
+                                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                                    無料プランでは1日200クレジットまで利用可能です
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                                3
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold mb-3">初回タスクの実行</h3>
+                            <p class="text-gray-700 mb-4">
+                                簡単なタスクから始めてみましょう。例：「東京の明日の天気を調べて」「おすすめの日本料理レシピを3つ教えて」など。
+                            </p>
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                                <h4 class="font-semibold text-green-800 mb-2">初心者におすすめのタスク例</h4>
+                                <ul class="text-sm text-green-700 space-y-1">
+                                    <li>• 天気予報や交通情報の確認</li>
+                                    <li>• 簡単な商品比較</li>
+                                    <li>• ニュースの要約</li>
+                                    <li>• 基本的な情報検索</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                                4
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold mb-3">高度な機能の活用</h3>
+                            <p class="text-gray-700 mb-4">
+                                基本的な使い方に慣れたら、複雑なタスクにチャレンジしてみましょう。旅行計画の作成、データ分析、コンテンツ制作など。
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                                    <h4 class="font-semibold text-purple-800 mb-2">中級者向け</h4>
+                                    <ul class="text-sm text-purple-700 space-y-1">
+                                        <li>• 旅行計画の作成</li>
+                                        <li>• プレゼン資料の生成</li>
+                                        <li>• 市場調査レポート</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                                    <h4 class="font-semibold text-orange-800 mb-2">上級者向け</h4>
+                                    <ul class="text-sm text-orange-700 space-y-1">
+                                        <li>• 動画・アニメ制作</li>
+                                        <li>• 複雑なデータ分析</li>
+                                        <li>• マルチタスクの自動化</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section id="use-cases" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-lightbulb text-blue-600 mr-3"></i>
+                    実際の活用事例
+                </h2>
+
+                <div class="space-y-8">
+                    <!-- Personal Use Cases -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-user text-green-600 mr-3"></i>
+                            個人利用
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-green-800 mb-3">
+                                    <i class="fas fa-plane mr-2"></i>
+                                    旅行計画の作成
+                                </h4>
+                                <div class="text-sm text-gray-700 mb-4">
+                                    <strong>指示例：</strong>「4月中旬にサンディエゴへ5日間旅行したい。公共交通機関メインで、ベジタリアン対応のレストラン希望、歩くのは1日最大15分まで。」
+                                </div>
+                                <div class="text-sm text-green-700">
+                                    <strong>実行内容：</strong>
+                                    <ul class="mt-2 space-y-1">
+                                        <li>• フライト検索と予約候補の提示</li>
+                                        <li>• 宿泊施設の選定と比較</li>
+                                        <li>• ベジタリアン対応レストランのリスト</li>
+                                        <li>• 詳細な日程表の作成</li>
+                                        <li>• 必要に応じて実際の予約手続き</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-blue-800 mb-3">
+                                    <i class="fas fa-utensils mr-2"></i>
+                                    レストラン予約
+                                </h4>
+                                <div class="text-sm text-gray-700 mb-4">
+                                    <strong>指示例：</strong>「Aレストランに今晩2名で予約して。窓際の席希望で、1名は甲殻類アレルギーです。」
+                                </div>
+                                <div class="text-sm text-blue-700">
+                                    <strong>実行内容：</strong>
+                                    <ul class="mt-2 space-y-1">
+                                        <li>• レストランへの電話予約</li>
+                                        <li>• アレルギー情報の確実な伝達</li>
+                                        <li>• 座席の希望を交渉</li>
+                                        <li>• 予約確認と詳細の報告</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-purple-800 mb-3">
+                                    <i class="fas fa-video mr-2"></i>
+                                    レシピ動画作成
+                                </h4>
+                                <div class="text-sm text-gray-700 mb-4">
+                                    <strong>指示例：</strong>「タロとカラマンシ、ピスタチオを使ったデザートのレシピ動画を作って。」
+                                </div>
+                                <div class="text-sm text-purple-700">
+                                    <strong>実行内容：</strong>
+                                    <ul class="mt-2 space-y-1">
+                                        <li>• 材料の情報収集と栄養分析</li>
+                                        <li>• オリジナルレシピの考案</li>
+                                        <li>• 動画用の映像クリップ編集</li>
+                                        <li>• BGMと効果音の追加</li>
+                                        <li>• 完成した動画の提供</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-orange-800 mb-3">
+                                    <i class="fas fa-film mr-2"></i>
+                                    アニメーション制作
+                                </h4>
+                                <div class="text-sm text-gray-700 mb-4">
+                                    <strong>指示例：</strong>「最近話題の『Signal Gate論争』をテーマに、『サウスパーク』風のアニメを作って。」
+                                </div>
+                                <div class="text-sm text-orange-700">
+                                    <strong>実行内容：</strong>
+                                    <ul class="mt-2 space-y-1">
+                                        <li>• 話題の背景情報を調査</li>
+                                        <li>• オリジナル脚本の作成</li>
+                                        <li>• キャラクターデザインの生成</li>
+                                        <li>• セリフの音声合成</li>
+                                        <li>• アニメーション制作と編集</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Use Cases -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-briefcase text-blue-600 mr-3"></i>
+                            ビジネス活用
+                        </h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-blue-800 mb-3">マーケター</h4>
+                                <ul class="text-sm text-blue-700 space-y-2">
+                                    <li>• インフルエンサーリスト作成</li>
+                                    <li>• キャンペーン効果測定</li>
+                                    <li>• 競合分析レポート</li>
+                                    <li>• SNSコンテンツ企画</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-green-800 mb-3">教育関係者</h4>
+                                <ul class="text-sm text-green-700 space-y-2">
+                                    <li>• 複雑な数式の視覚化</li>
+                                    <li>• インタラクティブ教材作成</li>
+                                    <li>• 授業スライドの自動生成</li>
+                                    <li>• 学習進度の分析</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-purple-800 mb-3">採用担当者</h4>
+                                <ul class="text-sm text-purple-700 space-y-2">
+                                    <li>• LinkedInプロフィール分析</li>
+                                    <li>• 候補者の比較レポート</li>
+                                    <li>• 面接質問の作成</li>
+                                    <li>• 採用市場の調査</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-red-800 mb-3">デザイナー</h4>
+                                <ul class="text-sm text-red-700 space-y-2">
+                                    <li>• イベントポスター作成</li>
+                                    <li>• SNS用グラフィック生成</li>
+                                    <li>• プレゼン資料のデザイン</li>
+                                    <li>• トレンド分析</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-yellow-800 mb-3">技術者</h4>
+                                <ul class="text-sm text-yellow-700 space-y-2">
+                                    <li>• 技術文書の要約</li>
+                                    <li>• プレゼン用スライド作成</li>
+                                    <li>• システム設計図の生成</li>
+                                    <li>• 技術トレンドの調査</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-indigo-800 mb-3">営業担当</h4>
+                                <ul class="text-sm text-indigo-700 space-y-2">
+                                    <li>• 提案資料の自動作成</li>
+                                    <li>• 競合比較表の生成</li>
+                                    <li>• 顧客分析レポート</li>
+                                    <li>• 売上予測データの分析</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Industry Specific Use Cases -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-industry text-gray-600 mr-3"></i>
+                            業界別活用例
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-700 mb-3">eコマース・小売業</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• 商品比較表の自動生成</li>
+                                    <li>• 競合価格調査</li>
+                                    <li>• 顧客レビューの分析</li>
+                                    <li>• 在庫管理の最適化提案</li>
+                                    <li>• マーケティング動画の制作</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-700 mb-3">金融・投資</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• 市場分析レポートの作成</li>
+                                    <li>• 投資先企業の調査</li>
+                                    <li>• リスク評価の可視化</li>
+                                    <li>• 経済指標の解説動画</li>
+                                    <li>• ポートフォリオ分析</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-credit-card text-blue-600 mr-3"></i>
+                    料金プランと選び方
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <!-- Free Plan -->
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200 rounded-lg p-6">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-green-800 mb-2">無料プラン</h3>
+                            <div class="text-4xl font-bold text-green-600 mb-2">¥0</div>
+                            <p class="text-green-700">完全無料で始められる</p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center text-green-700">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>1日200クレジット</span>
+                            </div>
+                            <div class="flex items-center text-green-700">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>基本的なスーパーエージェント機能</span>
+                            </div>
+                            <div class="flex items-center text-green-700">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>情報検索とSparkpage生成</span>
+                            </div>
+                            <div class="flex items-center text-green-700">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>簡単なデータ分析</span>
+                            </div>
+                            <div class="flex items-center text-green-700">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>基本的な図解作成</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-green-100 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">おすすめの利用者</h4>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>• AIエージェントを初めて使う方</li>
+                                <li>• 軽めのタスクが中心の方</li>
+                                <li>• 試してから有料プランを検討したい方</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Plus Plan -->
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-100 border-2 border-blue-300 rounded-lg p-6 relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                                おすすめ
+                            </span>
+                        </div>
+                        
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-blue-800 mb-2">Plusプラン</h3>
+                            <div class="text-4xl font-bold text-blue-600 mb-1">¥3,200</div>
+                            <div class="text-lg text-blue-700 mb-2">月額 (年間払い)</div>
+                            <p class="text-blue-600 text-sm">月額払い: ¥4,000/月</p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center text-blue-700">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>月10,000クレジット</span>
+                            </div>
+                            <div class="flex items-center text-blue-700">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>全スーパーエージェント機能</span>
+                            </div>
+                            <div class="flex items-center text-blue-700">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>動画・アニメーション制作</span>
+                            </div>
+                            <div class="flex items-center text-blue-700">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>高度なデータ分析</span>
+                            </div>
+                            <div class="flex items-center text-blue-700">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>通話代行機能</span>
+                            </div>
+                            <div class="flex items-center text-blue-700">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>優先サポート</span>
+                            </div>
+                            <div class="flex items-center text-blue-700">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>追加クレジット購入可能</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-blue-100 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">おすすめの利用者</h4>
+                            <ul class="text-sm text-blue-700 space-y-1">
+                                <li>• 日常的にAIエージェントを活用したい方</li>
+                                <li>• クリエイティブなタスクを頻繁に行う方</li>
+                                <li>• ビジネスでの利用を考えている方</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Credit Usage Guide -->
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-coins text-yellow-500 mr-3"></i>
+                        クレジット消費の目安
+                    </h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-white rounded-lg p-4 text-center">
+                            <div class="text-green-600 text-2xl mb-2">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-1">基本検索</h4>
+                            <p class="text-sm text-gray-600 mb-2">情報検索・要約</p>
+                            <div class="text-lg font-bold text-green-600">5-10</div>
+                            <p class="text-xs text-gray-500">クレジット</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 text-center">
+                            <div class="text-blue-600 text-2xl mb-2">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-1">データ分析</h4>
+                            <p class="text-sm text-gray-600 mb-2">レポート作成</p>
+                            <div class="text-lg font-bold text-blue-600">20-50</div>
+                            <p class="text-xs text-gray-500">クレジット</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 text-center">
+                            <div class="text-purple-600 text-2xl mb-2">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-1">画像生成</h4>
+                            <p class="text-sm text-gray-600 mb-2">図解・イラスト</p>
+                            <div class="text-lg font-bold text-purple-600">15-30</div>
+                            <p class="text-xs text-gray-500">クレジット</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 text-center">
+                            <div class="text-red-600 text-2xl mb-2">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-1">動画制作</h4>
+                            <p class="text-sm text-gray-600 mb-2">アニメーション</p>
+                            <div class="text-lg font-bold text-red-600">100-200</div>
+                            <p class="text-xs text-gray-500">クレジット</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Purchase -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-blue-800 mb-3 flex items-center">
+                        <i class="fas fa-plus-circle mr-2"></i>
+                        追加クレジット（Plus会員限定）
+                    </h3>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-blue-700 mb-1">10,000クレジット追加パック</p>
+                            <p class="text-sm text-blue-600">大量のタスクを処理したい場合に便利</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-blue-600">$20</div>
+                            <p class="text-sm text-blue-500">約¥3,000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section id="comparison" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-balance-scale text-blue-600 mr-3"></i>
+                    他のAIツールとの比較
+                </h2>
+
+                <!-- Comparison Table -->
+                <div class="overflow-x-auto mb-8">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left font-semibold">機能</th>
+                                <th class="px-4 py-3 text-center font-semibold text-blue-600">Genspark Super Agent</th>
+                                <th class="px-4 py-3 text-center font-semibold">ChatGPT</th>
+                                <th class="px-4 py-3 text-center font-semibold">Perplexity</th>
+                                <th class="px-4 py-3 text-center font-semibold">Claude</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-white">
+                                <td class="px-4 py-3 font-medium">自律的タスク実行</td>
+                                <td class="px-4 py-3 text-center bg-green-50"><i class="fas fa-check text-green-600"></i></td>
+                                <td class="px-4 py-3 text-center bg-red-50"><i class="fas fa-times text-red-600"></i></td>
+                                <td class="px-4 py-3 text-center bg-red-50"><i class="fas fa-times text-red-600"></i></td>
+                                <td class="px-4 py-3 text-center bg-red-50"><i class="fas fa-times text-red-600"></i></td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-4 py-3 font-medium">リアルタイム情報検索</td>
+                                <td class="px-4 py-3 text-center bg-green-50"><i class="fas fa-check text-green-600"></i></td>
+                                <td class="px-4 py-3 text-center bg-yellow-50"><i class="fas fa-exclamation-triangle text-yellow-600"></i></td>
+                                <td class="px-4 py-3 text-center bg-green-50"><i class="fas fa-check text-green-600"></i></td>
+                                <td class="px-4 py-3 text-center bg-red-50"><i class="fas fa-times text-red-600"></i></td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="px-4 py-3 font-medium">実際の電話予約</td>
+                                <td class="px-4 py-3 text-center bg-green-50"><i class="fas fa-check text-green-600"></i></td>
+                                <td class="px-4 py-3 text-center bg-red-50"><i class="fas fa-times text-red-600"></i></td>
+                                <td class="px-4 py-3 text-center bg-red-50"><i class="fas fa-times text-red-600"></i></td>
+                                <td class="px-4 py-3 text-center bg-red-50"><i class="fas fa-times text-red-600"></i></td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-4 py-3 font-medium">動画・アニメ制作</td>
+                                <td class="px-4 py-3 text-center bg-green-50"><i class="fas fa-check text-green-600"></i></td>
+                                <td class="px-4 py-3 text-center bg-red-50"><i class="fas fa-times text-red-600"></i></td>
+                                <td class="px-4 py-3 text-center bg-red-50"><i class="fas fa-times text-red-600"></i></td>
+                                <td class="px-4 py-3 text-center bg-red-50"><i class="fas fa-times text-red-600"></i></td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="px-4 py-3 font-medium">多様なツール連携</td>
+                                <td class="px-4 py-3 text-center bg-green-50">80+</td>
+                                <td class="px-4 py-3 text-center bg-yellow-50">限定的</td>
+                                <td class="px-4 py-3 text-center bg-yellow-50">検索特化</td>
+                                <td class="px-4 py-3 text-center bg-yellow-50">限定的</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-4 py-3 font-medium">無料プラン</td>
+                                <td class="px-4 py-3 text-center bg-green-50">200クレジット/日</td>
+                                <td class="px-4 py-3 text-center bg-yellow-50">制限あり</td>
+                                <td class="px-4 py-3 text-center bg-yellow-50">5回/日</td>
+                                <td class="px-4 py-3 text-center bg-yellow-50">制限あり</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Detailed Comparison -->
+                <div class="space-y-6">
+                    <div class="pros-cons-grid">
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-green-800 mb-4 flex items-center">
+                                <i class="fas fa-thumbs-up mr-2"></i>
+                                Gensparkの強み
+                            </h3>
+                            <ul class="space-y-2 text-sm text-green-700">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-2 mt-0.5"></i>
+                                    <span>複雑なタスクの完全自動化</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-2 mt-0.5"></i>
+                                    <span>実世界との連携（電話予約等）</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-2 mt-0.5"></i>
+                                    <span>マルチメディアコンテンツ制作</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-2 mt-0.5"></i>
+                                    <span>9つのLLMによる最適な処理</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle mr-2 mt-0.5"></i>
+                                    <span>豊富な無料利用枠</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-yellow-800 mb-4 flex items-center">
+                                <i class="fas fa-exclamation-triangle mr-2"></i>
+                                注意すべき点
+                            </h3>
+                            <ul class="space-y-2 text-sm text-yellow-700">
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-circle mr-2 mt-0.5"></i>
+                                    <span>複雑なタスクは時間がかかる場合がある</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-circle mr-2 mt-0.5"></i>
+                                    <span>クレジット制による利用制限</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-circle mr-2 mt-0.5"></i>
+                                    <span>日本語対応は発展途上</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-circle mr-2 mt-0.5"></i>
+                                    <span>結果の確認と検証が重要</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Use Case Recommendations -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-blue-800 mb-4 flex items-center">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            どのツールを選ぶべき？
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-blue-700 mb-2">Gensparkがおすすめの場合</h4>
+                                <ul class="text-sm text-blue-600 space-y-1">
+                                    <li>• 複雑なタスクを自動化したい</li>
+                                    <li>• 動画やアニメーションを作成したい</li>
+                                    <li>• 実際の予約などの代行を依頼したい</li>
+                                    <li>• 一つのツールで様々なことを処理したい</li>
+                                    <li>• 最新のAI技術を体験したい</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-700 mb-2">他のツールがおすすめの場合</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• シンプルな質問応答が中心</li>
+                                    <li>• プログラミングやコーディング重視</li>
+                                    <li>• 文章作成に特化したい</li>
+                                    <li>• 検索結果の確認が主目的</li>
+                                    <li>• 既存のワークフローに組み込みたい</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section id="tips" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-magic text-blue-600 mr-3"></i>
+                    効果的な活用のコツと注意点
+                </h2>
+
+                <div class="space-y-8">
+                    <!-- Effective Prompts -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-pen text-green-600 mr-3"></i>
+                            効果的なプロンプトの書き方
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-green-800 mb-3">
+                                    <i class="fas fa-check-circle mr-2"></i>
+                                    良いプロンプト例
+                                </h4>
+                                <div class="bg-white border rounded-lg p-4 mb-3">
+                                    <p class="text-sm text-gray-700 font-mono">
+                                        「東京から3泊4日の大阪旅行プランを作成してください。予算は一人5万円以内、公共交通機関利用、グルメ重視で、特に有名なたこ焼きと寿司を食べたいです。宿泊は心斎橋エリア希望で、各日の詳細スケジュールと移動手段も含めてください。」
+                                    </p>
+                                </div>
+                                <ul class="text-sm text-green-700 space-y-1">
+                                    <li>✅ 具体的な条件を明記</li>
+                                    <li>✅ 予算や期間を指定</li>
+                                    <li>✅ 希望や制約を詳述</li>
+                                    <li>✅ 期待する出力形式を説明</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-red-800 mb-3">
+                                    <i class="fas fa-times-circle mr-2"></i>
+                                    避けるべきプロンプト例
+                                </h4>
+                                <div class="bg-white border rounded-lg p-4 mb-3">
+                                    <p class="text-sm text-gray-700 font-mono">
+                                        「大阪旅行のプランを考えて」
+                                    </p>
+                                </div>
+                                <ul class="text-sm text-red-700 space-y-1">
+                                    <li>❌ 情報が不足している</li>
+                                    <li>❌ 条件や制約が不明</li>
+                                    <li>❌ 期待する結果が曖昧</li>
+                                    <li>❌ 具体性に欠ける</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-blue-800 mb-3">プロンプト作成の5つのポイント</h4>
+                            <div class="grid md:grid-cols-5 gap-4">
+                                <div class="text-center">
+                                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-2">
+                                        1
+                                    </div>
+                                    <h5 class="font-semibold text-blue-700 mb-1">目的を明確に</h5>
+                                    <p class="text-xs text-blue-600">何を達成したいかを具体的に</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-2">
+                                        2
+                                    </div>
+                                    <h5 class="font-semibold text-blue-700 mb-1">条件を詳述</h5>
+                                    <p class="text-xs text-blue-600">制約や希望を漏れなく</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-2">
+                                        3
+                                    </div>
+                                    <h5 class="font-semibold text-blue-700 mb-1">形式を指定</h5>
+                                    <p class="text-xs text-blue-600">どんな形で結果が欲しいか</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-2">
+                                        4
+                                    </div>
+                                    <h5 class="font-semibold text-blue-700 mb-1">背景を共有</h5>
+                                    <p class="text-xs text-blue-600">なぜ必要なのかを説明</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-2">
+                                        5
+                                    </div>
+                                    <h5 class="font-semibold text-blue-700 mb-1">段階的指示</h5>
+                                    <p class="text-xs text-blue-600">複雑な場合は順序立てて</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Best Practices -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-star text-yellow-600 mr-3"></i>
+                            活用のベストプラクティス
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-yellow-800 mb-3">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    効率的な利用
+                                </h4>
+                                <ul class="text-sm text-yellow-700 space-y-2">
+                                    <li>• 簡単なタスクから始める</li>
+                                    <li>• 結果を段階的に確認する</li>
+                                    <li>• クレジット消費を意識する</li>
+                                    <li>• 複数のタスクをまとめて依頼</li>
+                                    <li>• 結果を保存・整理する</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-purple-800 mb-3">
+                                    <i class="fas fa-shield-alt mr-2"></i>
+                                    品質管理
+                                </h4>
+                                <ul class="text-sm text-purple-700 space-y-2">
+                                    <li>• 結果の事実確認を必ず実施</li>
+                                    <li>• 重要な情報は複数回検証</li>
+                                    <li>• 専門分野は専門家に確認</li>
+                                    <li>• 定期的に情報を更新</li>
+                                    <li>• バックアップ手段を準備</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-green-800 mb-3">
+                                    <i class="fas fa-lightbulb mr-2"></i>
+                                    創造的活用
+                                </h4>
+                                <ul class="text-sm text-green-700 space-y-2">
+                                    <li>• 異なる分野の組み合わせ</li>
+                                    <li>• 既存アイデアの発展</li>
+                                    <li>• 多角的な視点での分析</li>
+                                    <li>• 視覚的表現の活用</li>
+                                    <li>• インタラクティブな要素追加</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Important Warnings -->
+                    <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-red-800 mb-4 flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-3"></i>
+                            重要な注意事項
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-red-700 mb-3">情報の取り扱い</h4>
+                                <ul class="text-sm text-red-600 space-y-1">
+                                    <li>• 個人情報や機密情報は入力しない</li>
+                                    <li>• 生成された情報は必ず検証する</li>
+                                    <li>• 法的・医療的アドバイスは専門家に確認</li>
+                                    <li>• 著作権や知的財産権に注意</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-red-700 mb-3">利用時の心構え</h4>
+                                <ul class="text-sm text-red-600 space-y-1">
+                                    <li>• AIは完璧ではないことを認識</li>
+                                    <li>• 最終的な判断は人間が行う</li>
+                                    <li>• 結果に責任を持つ</li>
+                                    <li>• 継続的な学習と改善を心がける</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Troubleshooting -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-tools mr-3"></i>
+                            よくある問題と解決法
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white border rounded-lg p-4">
+                                <h4 class="font-semibold text-gray-800 mb-2">
+                                    <i class="fas fa-question-circle text-blue-600 mr-2"></i>
+                                    期待した結果が得られない場合
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <strong>解決法：</strong>プロンプトをより具体的に書き直し、条件や期待する結果を明確に指定する
+                                </p>
+                            </div>
+                            
+                            <div class="bg-white border rounded-lg p-4">
+                                <h4 class="font-semibold text-gray-800 mb-2">
+                                    <i class="fas fa-hourglass-half text-yellow-600 mr-2"></i>
+                                    処理に時間がかかりすぎる場合
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <strong>解決法：</strong>タスクを小分けにして段階的に実行するか、シンプルな要求から始める
+                                </p>
+                            </div>
+                            
+                            <div class="bg-white border rounded-lg p-4">
+                                <h4 class="font-semibold text-gray-800 mb-2">
+                                    <i class="fas fa-coins text-red-600 mr-2"></i>
+                                    クレジットが不足する場合
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <strong>解決法：</strong>タスクの優先順位を決めて重要なものから実行するか、Plusプランの検討を
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Genspark スーパーエージェントで始める新しいAI体験</h2>
+            <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
+                単なるAI検索を超えて、複雑なタスクを自律的に処理する次世代AIエージェント。まずは無料プランで、その革新的な能力を体験してみませんか？
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <div class="bg-white bg-opacity-20 rounded-lg px-6 py-3">
+                    <div class="text-2xl font-bold">完全無料</div>
+                    <div class="text-sm opacity-90">クレジットカード不要</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg px-6 py-3">
+                    <div class="text-2xl font-bold">200クレジット/日</div>
+                    <div class="text-sm opacity-90">無料プランでも十分活用可能</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg px-6 py-3">
+                    <div class="text-2xl font-bold">今すぐ開始</div>
+                    <div class="text-sm opacity-90">数分で利用開始可能</div>
+                </div>
+            </div>
+            
+            <div class="mt-8">
+                <p class="text-sm opacity-75">
+                    このガイドが、あなたのGenspark スーパーエージェント活用の第一歩となれば幸いです。
+                    <br>
+                    AIと共に、より効率的で創造的な毎日を始めましょう。
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400 mb-4">
+                このガイドは2025年6月の情報に基づいて作成されています。最新の情報は公式サイトでご確認ください。
+            </p>
+            <div class="flex justify-center space-x-6 text-sm text-gray-400">
+                <span>• Genspark スーパーエージェント完全活用ガイド</span>
+                <span>• 初心者から上級者まで対応</span>
+                <span>• 実践的な使い方を詳しく解説</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDsUnsCf2vsqVaLHQHwca0SFZ0TQQvV6yZ25emrpdAN9t1cTenbxY5o6QocbPo%2Foj%2FivKPBfMyiFHvrncNuFFKJxJI8nUB7bLp1Ag%2Fpuh68aoQM5Cjm4h3wTk4oT8T2P6gx4a1EeBNum9XSeP%2Br30%2FOFRaj%2FZFZwru4GKo6%2FpFIkMWH75LEWLkDdwwREdF1s7MLpb8%2BU7UTppKwm5o%2BOgONFLgJZt4Uwb4vuQDMNyk52QuEDTpqlNrSUcA%2BmmckB7SZzLcH8EzmvCRD0nfcq7DYscgfx7YmgsdnlWZvEu%2BEfM9gBgGd8yMl%2F%2B2hQMLnJroDxykNO04fAsIei%2B2NjkjesoVhnUGraPLnRg%2Bvo9Y%2BzLRHD8zR6nco9%2BteQvstFhWZbh%2BijwZhEnaSyeE9uL%2FT1jGaiW62X94hR4CUmAAykBeMGhfJ58%2B7J2TWKUDT86ExxNuXVqzmZrZDjjPHSwXL5uZio9gVZS7UsdSMEOBCoIoPILxmebY8nQwftkPP%2FWKIw%2BgbvHJp4geU9FhMENjt4%3D";
+        window.__genspark_locale = "ja-JP";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDsUnsCf2vsqVaLHQHwca0SFZ0TQQvV6yZ25emrpdAN9t1cTenbxY5o6QocbPo/oj/ivKPBfMyiFHvrncNuFFKJxJI8nUB7bLp1Ag/puh68aoQM5Cjm4h3wTk4oT8T2P6gx4a1EeBNum9XSeP+r30/OFRaj/ZFZwru4GKo6/pFIkMWH75LEWLkDdwwREdF1s7MLpb8+U7UTppKwm5o+OgONFLgJZt4Uwb4vuQDMNyk52QuEDTpqlNrSUcA+mmckB7SZzLcH8EzmvCRD0nfcq7DYscgfx7YmgsdnlWZvEu+EfM9gBgGd8yMl/+2hQMLnJroDxykNO04fAsIei+2NjkjesoVhnUGraPLnRg+vo9Y+zLRHD8zR6nco9+teQvstFhWZbh+ijwZhEnaSyeE9uL/T1jGaiW62X94hR4CUmAAykBeMGhfJ58+7J2TWKUDT86ExxNuXVqzmZrZDjjPHSwXL5uZio9gVZS7UsdSMEOBCoIoPILxmebY8nQwftkPP/WKIw+gbvHJp4geU9FhMENjt4=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
