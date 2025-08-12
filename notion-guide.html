@@ -1,0 +1,1014 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notion 完全活用ガイド - 次世代ワークスペースの極意</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pros-cons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .pros-cons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="text-center">
+                <h1 class="text-5xl font-bold mb-6">Notion 完全活用ガイド</h1>
+                <h2 class="text-2xl font-light mb-8">次世代ワークスペースの極意</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    単なるノートアプリを超えた、思考と創造の万能ツール。初心者から上級者まで、Notionの真の力を解き放つための完全ガイド
+                </p>
+                <div class="mt-8 flex justify-center items-center space-x-4">
+                    <div class="bg-white bg-opacity-20 rounded-full px-4 py-2">
+                        <i class="fas fa-rocket mr-2"></i>
+                        <span>生産性革命</span>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-full px-4 py-2">
+                        <i class="fas fa-star mr-2"></i>
+                        <span>無限の可能性</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="bg-white border-b sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex flex-wrap justify-center space-x-6 text-sm">
+                <a href="#overview" class="text-gray-600 hover:text-blue-600 transition-colors">概要</a>
+                <a href="#features" class="text-gray-600 hover:text-blue-600 transition-colors">主な機能</a>
+                <a href="#getting-started" class="text-gray-600 hover:text-blue-600 transition-colors">始め方</a>
+                <a href="#use-cases" class="text-gray-600 hover:text-blue-600 transition-colors">活用事例</a>
+                <a href="#advanced" class="text-gray-600 hover:text-blue-600 transition-colors">高度な技術</a>
+                <a href="#templates" class="text-gray-600 hover:text-blue-600 transition-colors">テンプレート</a>
+                <a href="#tips" class="text-gray-600 hover:text-blue-600 transition-colors">活用のコツ</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-8">
+        <!-- Overview Section -->
+        <section id="overview" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-cube text-blue-600 mr-3"></i>
+                    Notionとは？ - デジタル時代の万能ワークスペース
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <p class="text-lg text-gray-700 mb-4">
+                            Notionは、<strong>ノート、データベース、カンバン、Wiki</strong>を統合した、まさに「オールインワン」のワークスペースです。2016年にリリースされて以来、世界中のクリエイター、起業家、学生、企業が愛用する<strong>思考の具現化ツール</strong>へと進化しました。
+                        </p>
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+                            <p class="text-blue-800">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                Notionの美しさは、その「ブロック」という概念にあります。レゴブロックのように、あらゆる要素を自在に組み合わせて、あなただけの知的空間を構築できるのです。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4">Notionの哲学的特徴</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-infinity text-purple-600 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>無限の柔軟性</strong><br>
+                                    <span class="text-sm text-gray-600">あらゆる情報を、あなたの思考に合わせて整理</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-puzzle-piece text-green-600 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>完璧な統合性</strong><br>
+                                    <span class="text-sm text-gray-600">ノート、タスク、データベースがシームレスに連携</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-users text-yellow-600 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>協働の芸術</strong><br>
+                                    <span class="text-sm text-gray-600">リアルタイムでチームの知恵を結集</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Philosophy Quote -->
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6">
+                    <blockquote class="text-center">
+                        <p class="text-xl italic text-gray-700 mb-4">
+                            「Notionは単なるツールではない。それは、散らばった思考の断片を美しいタペストリーへと織り上げる、現代の知的織機である。」
+                        </p>
+                        <footer class="text-gray-600">- デジタル哲学者の言葉</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-magic text-blue-600 mr-3"></i>
+                    Notionの魔法 - 主要機能の深層
+                </h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Pages & Blocks -->
+                    <div class="feature-card bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 border border-blue-200">
+                        <div class="text-blue-600 text-3xl mb-4">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-blue-800">ページとブロック</h3>
+                        <p class="text-gray-700 mb-4">すべての基本単位。無限に入れ子にできる階層構造</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• テキスト、見出し、引用</li>
+                            <li>• トグルリスト、番号付きリスト</li>
+                            <li>• コードブロック、数式</li>
+                            <li>• 埋め込み、同期ブロック</li>
+                        </ul>
+                    </div>
+
+                    <!-- Database -->
+                    <div class="feature-card bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6 border border-green-200">
+                        <div class="text-green-600 text-3xl mb-4">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-green-800">データベース</h3>
+                        <p class="text-gray-700 mb-4">情報の宇宙を構築する最強の武器</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• テーブル、ボード、ギャラリー</li>
+                            <li>• カレンダー、タイムライン</li>
+                            <li>• リレーション、ロールアップ</li>
+                            <li>• 高度なフィルターとソート</li>
+                        </ul>
+                    </div>
+
+                    <!-- Templates -->
+                    <div class="feature-card bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6 border border-purple-200">
+                        <div class="text-purple-600 text-3xl mb-4">
+                            <i class="fas fa-clone"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-purple-800">テンプレート</h3>
+                        <p class="text-gray-700 mb-4">繰り返しを自動化する魔法の型</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• ページテンプレート</li>
+                            <li>• データベーステンプレート</li>
+                            <li>• ボタンによる自動生成</li>
+                            <li>• 再利用可能な構造</li>
+                        </ul>
+                    </div>
+
+                    <!-- Collaboration -->
+                    <div class="feature-card bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6 border border-orange-200">
+                        <div class="text-orange-600 text-3xl mb-4">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-orange-800">コラボレーション</h3>
+                        <p class="text-gray-700 mb-4">チームの知恵を結集する交響曲</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• リアルタイム共同編集</li>
+                            <li>• コメントとディスカッション</li>
+                            <li>• メンションと通知</li>
+                            <li>• 権限管理とゲスト招待</li>
+                        </ul>
+                    </div>
+
+                    <!-- AI Assistant -->
+                    <div class="feature-card bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-6 border border-red-200">
+                        <div class="text-red-600 text-3xl mb-4">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-red-800">Notion AI</h3>
+                        <p class="text-gray-700 mb-4">思考を加速させるAIアシスタント</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 文章の要約と拡張</li>
+                            <li>• アイデアのブレインストーミング</li>
+                            <li>• 翻訳と文章校正</li>
+                            <li>• 表やリストの自動生成</li>
+                        </ul>
+                    </div>
+
+                    <!-- Integration -->
+                    <div class="feature-card bg-gradient-to-br from-pink-50 to-pink-100 rounded-lg p-6 border border-pink-200">
+                        <div class="text-pink-600 text-3xl mb-4">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-pink-800">統合と連携</h3>
+                        <p class="text-gray-700 mb-4">外部世界との優雅な接続</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Slack、GitHub連携</li>
+                            <li>• Google Drive埋め込み</li>
+                            <li>• Figma、Miroの統合</li>
+                            <li>• API経由の自動化</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                        機能の哲学的理解
+                    </h3>
+                    <p class="text-gray-700">
+                        Notionの各機能は、単独では単なる道具に過ぎません。しかし、これらが組み合わさることで、
+                        <strong>思考の外部化</strong>と<strong>知識の構造化</strong>という、人類が長年夢見てきた理想が実現されるのです。
+                        データベースは単なる表ではなく、<em>情報の宇宙を構築する基盤</em>となり、
+                        ブロックは単なるテキストではなく、<em>思考の原子</em>として機能します。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Getting Started Section -->
+        <section id="getting-started" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-rocket text-blue-600 mr-3"></i>
+                    Notion習得への道 - 段階的マスタープラン
+                </h2>
+
+                <div class="space-y-8">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                                1
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold mb-3">哲学的準備 - なぜNotionなのか</h3>
+                            <p class="text-gray-700 mb-4">
+                                まず自問せよ：「私は何を整理したいのか？」目的なき道具は、単なる玩具に過ぎない。
+                                あなたの思考パターン、仕事のスタイル、創造的プロセスを理解することから始めましょう。
+                            </p>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                                <p class="text-blue-800 text-sm">
+                                    <i class="fas fa-info-circle mr-2"></i>
+                                    Notionは、あなたの第二の脳となるべく設計されています。最初から完璧を求めず、徐々に育てていく庭のように考えましょう。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                                2
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold mb-3">基礎の構築 - ブロックとページ</h3>
+                            <p class="text-gray-700 mb-4">
+                                Notionの世界では、すべてが「ブロック」です。テキスト、画像、データベース、すべてがこの原子から構成されます。
+                                <code>/</code>コマンドを覚えることで、魔法の扉が開かれます。
+                            </p>
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                                <h4 class="font-semibold text-green-800 mb-2">必須のショートカット</h4>
+                                <ul class="text-sm text-green-700 space-y-1">
+                                    <li>• <code>Cmd/Ctrl + /</code> - ブロックメニュー</li>
+                                    <li>• <code>Cmd/Ctrl + Shift + L</code> - ダークモード切替</li>
+                                    <li>• <code>Cmd/Ctrl + P</code> - クイック検索</li>
+                                    <li>• <code>[[</code> - ページリンク作成</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                                3
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold mb-3">データベースの錬金術</h3>
+                            <p class="text-gray-700 mb-4">
+                                データベースこそ、Notionの真髄です。それは単なる表ではなく、情報の銀河系を構築する基盤となります。
+                                プロパティ、ビュー、フィルター、これらの組み合わせで無限の可能性が生まれます。
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                                    <h4 class="font-semibold text-purple-800 mb-2">基本的なビュー</h4>
+                                    <ul class="text-sm text-purple-700 space-y-1">
+                                        <li>• Table - 伝統的な表形式</li>
+                                        <li>• Board - カンバンスタイル</li>
+                                        <li>• Gallery - ビジュアル重視</li>
+                                        <li>• Calendar - 時間軸管理</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                                    <h4 class="font-semibold text-orange-800 mb-2">高度なプロパティ</h4>
+                                    <ul class="text-sm text-orange-700 space-y-1">
+                                        <li>• Relation - データ間の関係</li>
+                                        <li>• Rollup - 集計と計算</li>
+                                        <li>• Formula - カスタム計算式</li>
+                                        <li>• Filter & Sort - 動的な表示</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                                4
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold mb-3">システムの構築 - あなただけの宇宙</h3>
+                            <p class="text-gray-700 mb-4">
+                                基礎を理解したら、自分だけのシステムを構築する時です。GTD、Zettelkasten、PARA、
+                                どの手法を選ぶにせよ、Notionはその完璧な器となります。
+                            </p>
+                            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+                                <p class="text-yellow-800 text-sm">
+                                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                                    警告：完璧なシステムを求めるあまり、システム構築に溺れてはならない。目的は整理することではなく、整理を通じて何かを成し遂げることにある。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section id="use-cases" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-lightbulb text-blue-600 mr-3"></i>
+                    Notion活用の実践哲学
+                </h2>
+
+                <div class="space-y-8">
+                    <!-- Personal Use Cases -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-user text-green-600 mr-3"></i>
+                            個人の知的生産性
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-green-800 mb-3">
+                                    <i class="fas fa-brain mr-2"></i>
+                                    第二の脳（Second Brain）
+                                </h4>
+                                <p class="text-sm text-gray-700 mb-4">
+                                    すべての思考、アイデア、学習を一元化。忘却の恐怖から解放され、創造的な思考に集中できる環境を構築。
+                                </p>
+                                <div class="text-sm text-green-700">
+                                    <strong>実装要素：</strong>
+                                    <ul class="mt-2 space-y-1">
+                                        <li>• 日次ジャーナルとリフレクション</li>
+                                        <li>• アイデアの種を育てるインキュベーター</li>
+                                        <li>• 読書ノートと引用のデータベース</li>
+                                        <li>• プロジェクトとタスクの統合管理</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-blue-800 mb-3">
+                                    <i class="fas fa-graduation-cap mr-2"></i>
+                                    学習の体系化
+                                </h4>
+                                <p class="text-sm text-gray-700 mb-4">
+                                    知識を単なる情報の羅列ではなく、相互に関連した有機的なネットワークとして構築。
+                                </p>
+                                <div class="text-sm text-blue-700">
+                                    <strong>構築方法：</strong>
+                                    <ul class="mt-2 space-y-1">
+                                        <li>• 科目別の知識マップ</li>
+                                        <li>• フラッシュカードシステム</li>
+                                        <li>• 学習進捗のビジュアル化</li>
+                                        <li>• リソースライブラリの構築</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-purple-800 mb-3">
+                                    <i class="fas fa-chart-line mr-2"></i>
+                                    習慣とゴールの追跡
+                                </h4>
+                                <p class="text-sm text-gray-700 mb-4">
+                                    「測定できないものは改善できない」- データドリブンな自己改善システム。
+                                </p>
+                                <div class="text-sm text-purple-700">
+                                    <strong>トラッキング要素：</strong>
+                                    <ul class="mt-2 space-y-1">
+                                        <li>• 習慣トラッカーとストリーク</li>
+                                        <li>• OKRとKPIダッシュボード</li>
+                                        <li>• 健康・運動記録</li>
+                                        <li>• 財務管理と予算計画</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-orange-800 mb-3">
+                                    <i class="fas fa-palette mr-2"></i>
+                                    創造的プロジェクト
+                                </h4>
+                                <p class="text-sm text-gray-700 mb-4">
+                                    アイデアから実現まで、創造のプロセス全体を可視化し管理。
+                                </p>
+                                <div class="text-sm text-orange-700">
+                                    <strong>プロジェクト例：</strong>
+                                    <ul class="mt-2 space-y-1">
+                                        <li>• 執筆プロジェクトの章立て</li>
+                                        <li>• コンテンツカレンダー</li>
+                                        <li>• 作品ポートフォリオ</li>
+                                        <li>• インスピレーションボード</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Use Cases -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-users text-blue-600 mr-3"></i>
+                            チームの集合知
+                        </h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-blue-800 mb-3">プロダクトチーム</h4>
+                                <ul class="text-sm text-blue-700 space-y-2">
+                                    <li>• ロードマップの可視化</li>
+                                    <li>• スプリント計画とレトロ</li>
+                                    <li>• バグトラッキング</li>
+                                    <li>• ユーザーフィードバック管理</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-green-800 mb-3">マーケティング</h4>
+                                <ul class="text-sm text-green-700 space-y-2">
+                                    <li>• コンテンツカレンダー</li>
+                                    <li>• キャンペーン管理</li>
+                                    <li>• ブランドガイドライン</li>
+                                    <li>• 分析ダッシュボード</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-purple-800 mb-3">人事・組織</h4>
+                                <ul class="text-sm text-purple-700 space-y-2">
+                                    <li>• 社内Wiki構築</li>
+                                    <li>• オンボーディング資料</li>
+                                    <li>• 1on1記録管理</li>
+                                    <li>• 組織図と役割定義</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Systems -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-cog text-gray-600 mr-3"></i>
+                            高度なシステム構築例
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-700 mb-3">Zettelkasten（ツェッテルカステン）</h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    ニクラス・ルーマンが開発した知識管理システムをデジタル化。
+                                    アトミックノートと双方向リンクで、創発的な発見を促進。
+                                </p>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• 永続的なノートID体系</li>
+                                    <li>• トピックマップとインデックス</li>
+                                    <li>• 文献ノートと永続ノートの分離</li>
+                                    <li>• 発見のためのランダムウォーク</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-700 mb-3">PARA Method</h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    Projects、Areas、Resources、Archivesの4つのカテゴリーで
+                                    情報を整理する実践的フレームワーク。
+                                </p>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• アクティブプロジェクトの管理</li>
+                                    <li>• 責任領域の定義と追跡</li>
+                                    <li>• リソースライブラリの構築</li>
+                                    <li>• 定期的なアーカイブ処理</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Techniques Section -->
+        <section id="advanced" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-flask text-blue-600 mr-3"></i>
+                    高度な魔術 - Notionの深淵へ
+                </h2>
+
+                <div class="space-y-8">
+                    <!-- Formula Magic -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">関数式の錬金術</h3>
+                        <p class="text-gray-700 mb-4">
+                            Notionの関数は、データに生命を吹き込む呪文です。静的な情報が、動的な知性へと変貌します。
+                        </p>
+                        
+                        <div class="bg-gray-100 rounded-lg p-6 mb-6">
+                            <h4 class="font-semibold text-gray-800 mb-3">実践的な関数例</h4>
+                            <div class="space-y-4">
+                                <div class="bg-white rounded p-4">
+                                    <h5 class="font-semibold text-gray-700 mb-2">進捗の可視化</h5>
+                                    <code class="text-sm bg-gray-200 p-2 rounded block">
+                                        if(prop("完了タスク") / prop("全タスク") == 1, "✅ 完了", 
+                                        slice("▓▓▓▓▓▓▓▓▓▓", 0, round(prop("完了タスク") / prop("全タスク") * 10)) + 
+                                        slice("░░░░░░░░░░", 0, 10 - round(prop("完了タスク") / prop("全タスク") * 10)))
+                                    </code>
+                                </div>
+                                
+                                <div class="bg-white rounded p-4">
+                                    <h5 class="font-semibold text-gray-700 mb-2">締切までの日数と警告</h5>
+                                    <code class="text-sm bg-gray-200 p-2 rounded block">
+                                        if(dateBetween(prop("締切"), now(), "days") < 0, "⚠️ 期限切れ", 
+                                        if(dateBetween(prop("締切"), now(), "days") <= 3, "🔥 " + format(dateBetween(prop("締切"), now(), "days")) + "日", 
+                                        "📅 " + format(dateBetween(prop("締切"), now(), "days")) + "日"))
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4">
+                            <p class="text-blue-800">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                <strong>賢者の助言：</strong> 関数式は少しずつ構築せよ。複雑な式を一度に作ろうとすれば、バベルの塔のように崩壊する。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Synced Blocks -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">同期ブロックの量子もつれ</h3>
+                        <p class="text-gray-700 mb-4">
+                            同期ブロックは、情報の量子もつれ現象です。一箇所の変更が、瞬時に他の場所へと伝播します。
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-purple-800 mb-3">活用シーン</h4>
+                                <ul class="text-sm text-purple-700 space-y-2">
+                                    <li>• 複数プロジェクトで共有する定義</li>
+                                    <li>• 更新頻度の高い情報の一元管理</li>
+                                    <li>• テンプレート内の動的コンテンツ</li>
+                                    <li>• チーム間の情報同期</li>
+                                </ul>
+                            </div>
+                            <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-orange-800 mb-3">実装のコツ</h4>
+                                <ul class="text-sm text-orange-700 space-y-2">
+                                    <li>• 元ブロックの場所を明確に</li>
+                                    <li>• 更新権限の管理を慎重に</li>
+                                    <li>• バージョン履歴の活用</li>
+                                    <li>• 同期の範囲を適切に設定</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API Integration -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">APIとの対話 - 外部世界との架け橋</h3>
+                        <p class="text-gray-700 mb-4">
+                            Notion APIは、あなたのワークスペースを無限の可能性へと開放します。
+                        </p>
+                        
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">統合の可能性</h4>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div class="bg-white rounded p-4 text-center">
+                                    <div class="text-blue-600 text-2xl mb-2">
+                                        <i class="fas fa-sync"></i>
+                                    </div>
+                                    <h5 class="font-semibold mb-1">自動同期</h5>
+                                    <p class="text-sm text-gray-600">
+                                        外部データソースとの双方向同期
+                                    </p>
+                                </div>
+                                <div class="bg-white rounded p-4 text-center">
+                                    <div class="text-green-600 text-2xl mb-2">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <h5 class="font-semibold mb-1">自動化</h5>
+                                    <p class="text-sm text-gray-600">
+                                        Zapier、Make経由でのワークフロー
+                                    </p>
+                                </div>
+                                <div class="bg-white rounded p-4 text-center">
+                                    <div class="text-purple-600 text-2xl mb-2">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <h5 class="font-semibold mb-1">カスタム開発</h5>
+                                    <p class="text-sm text-gray-600">
+                                        独自のツールやボットの作成
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Templates Section -->
+        <section id="templates" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-clone text-blue-600 mr-3"></i>
+                    テンプレートの芸術
+                </h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-blue-800 mb-3">
+                            <i class="fas fa-calendar-check mr-2"></i>
+                            週次レビュー
+                        </h3>
+                        <p class="text-sm text-gray-700 mb-3">
+                            GTDメソッドに基づく包括的な週次振り返りテンプレート
+                        </p>
+                        <ul class="text-sm text-blue-700 space-y-1">
+                            <li>• 達成事項のレビュー</li>
+                            <li>• 次週の優先順位設定</li>
+                            <li>• 習慣トラッカーの更新</li>
+                            <li>• 気づきと改善点</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-green-800 mb-3">
+                            <i class="fas fa-book mr-2"></i>
+                            読書ノート
+                        </h3>
+                        <p class="text-sm text-gray-700 mb-3">
+                            本から得た知識を体系的に整理し、実践につなげる
+                        </p>
+                        <ul class="text-sm text-green-700 space-y-1">
+                            <li>• 書籍メタデータ</li>
+                            <li>• キーポイントの抽出</li>
+                            <li>• 個人的な洞察</li>
+                            <li>• アクションアイテム</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-purple-800 mb-3">
+                            <i class="fas fa-project-diagram mr-2"></i>
+                            プロジェクト管理
+                        </h3>
+                        <p class="text-sm text-gray-700 mb-3">
+                            アジャイルとウォーターフォールの良いとこ取り
+                        </p>
+                        <ul class="text-sm text-purple-700 space-y-1">
+                            <li>• マイルストーン管理</li>
+                            <li>• タスクの依存関係</li>
+                            <li>• リソース配分</li>
+                            <li>• 進捗ダッシュボード</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-orange-800 mb-3">
+                            <i class="fas fa-users mr-2"></i>
+                            会議議事録
+                        </h3>
+                        <p class="text-sm text-gray-700 mb-3">
+                            効率的な会議運営と確実なフォローアップ
+                        </p>
+                        <ul class="text-sm text-orange-700 space-y-1">
+                            <li>• アジェンダ設定</li>
+                            <li>• 決定事項の記録</li>
+                            <li>• アクションアイテム</li>
+                            <li>• 次回への申し送り</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-red-800 mb-3">
+                            <i class="fas fa-bullseye mr-2"></i>
+                            OKR管理
+                        </h3>
+                        <p class="text-sm text-gray-700 mb-3">
+                            目標と主要な結果を可視化し、進捗を追跡
+                        </p>
+                        <ul class="text-sm text-red-700 space-y-1">
+                            <li>• 四半期目標の設定</li>
+                            <li>• KRの定量化</li>
+                            <li>• 週次チェックイン</li>
+                            <li>• 振り返りと学習</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-pink-50 border border-pink-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-pink-800 mb-3">
+                            <i class="fas fa-heart mr-2"></i>
+                            習慣トラッカー
+                        </h3>
+                        <p class="text-sm text-gray-700 mb-3">
+                            小さな習慣の積み重ねが、大きな変化を生む
+                        </p>
+                        <ul class="text-sm text-pink-700 space-y-1">
+                            <li>• デイリーチェックリスト</li>
+                            <li>• ストリーク管理</li>
+                            <li>• 月次レビュー</li>
+                            <li>• モチベーション維持</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-gray-100 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">テンプレート活用の極意</h3>
+                    <p class="text-gray-700">
+                        テンプレートは出発点に過ぎません。重要なのは、それをあなたの思考パターンと
+                        ワークフローに合わせてカスタマイズすることです。完璧なテンプレートを探すより、
+                        80%合うものを見つけて、残りの20%を自分で調整する方が賢明です。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section id="tips" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-magic text-blue-600 mr-3"></i>
+                    Notion習得の奥義
+                </h2>
+
+                <div class="space-y-8">
+                    <!-- Design Philosophy -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-paint-brush text-purple-600 mr-3"></i>
+                            美学と効率の融合
+                        </h3>
+                        
+                        <div class="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-6">
+                            <h4 class="text-lg font-semibold text-purple-800 mb-4">デザインの哲学</h4>
+                            <p class="text-gray-700 mb-4">
+                                Notionページは、情報の庭園です。空白の使い方、色彩の選択、アイコンの配置 - 
+                                これらすべてが、思考の流れを導きます。
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <h5 class="font-semibold text-purple-700 mb-2">視覚的階層</h5>
+                                    <ul class="text-sm text-purple-600 space-y-1">
+                                        <li>• 見出しサイズで重要度を表現</li>
+                                        <li>• 色使いは最小限に抑える</li>
+                                        <li>• 空白を恐れない</li>
+                                        <li>• アイコンで直感的理解を促進</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-purple-700 mb-2">機能的美学</h5>
+                                    <ul class="text-sm text-purple-600 space-y-1">
+                                        <li>• トグルで情報を整理</li>
+                                        <li>• カラムで関連情報を並置</li>
+                                        <li>• 区切り線で論理的分離</li>
+                                        <li>• コールアウトで重要事項を強調</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Productivity Hacks -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-rocket text-green-600 mr-3"></i>
+                            生産性を爆発させる秘訣
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-green-800 mb-3">
+                                    <i class="fas fa-keyboard mr-2"></i>
+                                    ショートカットの極意
+                                </h4>
+                                <ul class="text-sm text-green-700 space-y-2">
+                                    <li><code>Cmd/Ctrl + E</code> - コードブロック</li>
+                                    <li><code>Cmd/Ctrl + K</code> - リンク挿入</li>
+                                    <li><code>Esc</code> - ブロック選択解除</li>
+                                    <li><code>Tab/Shift+Tab</code> - インデント調整</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-blue-800 mb-3">
+                                    <i class="fas fa-search mr-2"></i>
+                                    検索の魔法
+                                </h4>
+                                <ul class="text-sm text-blue-700 space-y-2">
+                                    <li>• フィルターで絞り込み</li>
+                                    <li>• 日付範囲での検索</li>
+                                    <li>• タグとプロパティの活用</li>
+                                    <li>• Quick Findの習慣化</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                                <h4 class="text-lg font-semibold text-orange-800 mb-3">
+                                    <i class="fas fa-sync mr-2"></i>
+                                    ワークフローの最適化
+                                </h4>
+                                <ul class="text-sm text-orange-700 space-y-2">
+                                    <li>• テンプレートボタンの活用</li>
+                                    <li>• 繰り返しタスクの自動化</li>
+                                    <li>• ビューの使い分け</li>
+                                    <li>• お気に入りの戦略的配置</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Common Pitfalls -->
+                    <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-red-800 mb-4 flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-3"></i>
+                            避けるべき落とし穴
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-red-700 mb-3">構造の罠</h4>
+                                <ul class="text-sm text-red-600 space-y-1">
+                                    <li>• 過度に複雑な階層構造</li>
+                                    <li>• 不必要なデータベースの乱立</li>
+                                    <li>• リレーションの過剰使用</li>
+                                    <li>• テンプレートへの過度な依存</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-red-700 mb-3">運用の罠</h4>
+                                <ul class="text-sm text-red-600 space-y-1">
+                                    <li>• 完璧主義による停滞</li>
+                                    <li>• メンテナンスの放置</li>
+                                    <li>• バックアップの不在</li>
+                                    <li>• 権限管理の混乱</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Growth Path -->
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-chart-line mr-3"></i>
+                            成長の道筋
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                    初級
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">基礎の習得（1-3ヶ月）</h4>
+                                    <p class="text-sm text-gray-600">
+                                        ページ作成、基本的なブロック操作、簡単なデータベース作成
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 bg-purple-600 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                    中級
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">システム構築（3-6ヶ月）</h4>
+                                    <p class="text-sm text-gray-600">
+                                        リレーションデータベース、関数の活用、個人システムの確立
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
+                                    上級
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">統合と自動化（6ヶ月以上）</h4>
+                                    <p class="text-sm text-gray-600">
+                                        API連携、高度な関数式、チーム全体のワークスペース設計
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">無限の可能性への扉</h2>
+            <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
+                Notionは道具です。しかし、優れた道具は使い手の創造性を解放します。
+                このガイドは始まりに過ぎません。真の習得は、日々の実践の中にあります。
+            </p>
+            
+            <div class="bg-white bg-opacity-20 rounded-lg p-6 max-w-2xl mx-auto">
+                <blockquote class="text-lg italic">
+                    「秩序は自由の前提条件である。しかし、過度の秩序は創造性の墓場となる。
+                    バランスを見出し、Notionをあなたの思考の延長として育てていきなさい。」
+                </blockquote>
+            </div>
+            
+            <div class="mt-8">
+                <p class="text-sm opacity-75">
+                    情報の海を航海する船長よ、Notionという羅針盤を手に、
+                    <br>
+                    あなただけの航路を切り開け。機知と創造性を武器に、
+                    <br>
+                    デジタル世界の新たな地平を目指すのだ。
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400 mb-4">
+                このガイドは、Notionの真髄を理解し、活用するための哲学的アプローチです。
+            </p>
+            <div class="flex justify-center space-x-6 text-sm text-gray-400">
+                <span>• 思考の具現化</span>
+                <span>• 知識の体系化</span>
+                <span>• 創造性の解放</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
