@@ -3,88 +3,161 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>カドー業務ポータル（リンク集）</title>
+  <title>cado-portal | リンク集</title>
   <style>
     :root{
-      --bg: #ffffff;
-      --text: #111827;
-      --muted:#6b7280;
-      --line:#e5e7eb;
-      --accent:#2563eb;
+      --bg:#ffffff;
+      --text:#1f2937;       /* 濃いグレー */
+      --muted:#6b7280;      /* 説明文グレー */
+      --accent:#2563eb;     /* インジケータ（青） */
+      --header:#475569;     /* タイトル帯のグレー */
       --radius:12px;
-      --maxw:880px;
-    }
-    @media (prefers-color-scheme: dark){
-      :root{
-        --bg:#0b0f14; --text:#e5e7eb; --muted:#9aa4b2; --line:#1f2937;
-        --accent:#60a5fa;
-      }
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      background:var(--bg);
+      font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,
+                   "Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
       color:var(--text);
-      font: 16px/1.7 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
-            Roboto, "Hiragino Kaku Gothic ProN","Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+      background:var(--bg);
     }
-    .wrap{max-width:var(--maxw); margin:0 auto; padding:48px 20px 72px}
+    .wrap{max-width:1060px; margin:0 auto; padding:0 20px 56px}
 
-    /* タイトル部分だけ背景グレー・文字白 */
-    header{
-      margin: -48px -20px 28px;
-      padding: 40px 20px;
-      background-color: #4b5563; /* グレー */
-      color: white;
+    /* ヘッダー（薄い帯） */
+    .hero{
+      background:var(--header);
+      color:#fff;
+      padding:28px 24px;              /* ← 薄くしました */
+      border-radius:8px;
+      margin:20px 0 24px;             /* 余白も控えめに */
     }
-    h1{margin:0 0 6px; font-size: clamp(26px, 4.6vw, 40px); font-weight: 800;}
-    .lead{margin:0; color:#e5e7eb}
+    .hero h1{
+      margin:0 0 8px;
+      font-size:clamp(22px,4vw,34px);
+      letter-spacing:.02em;
+      font-weight:800;
+    }
+    .hero p{
+      margin:0;
+      font-size:clamp(14px,2.2vw,16px);
+      color:#eef2f7;                  /* 説明は少し明るめの白 */
+    }
 
-    .hr{height:1px; background:var(--line); margin:24px 0}
-
-    /* 個別ページのリンクデザイン：枠線なし＆フラット */
-    .list{display:grid; gap:10px; margin-top:14px}
+    /* リンク一覧（シンプル行） */
+    .list{margin:12px 0 0; padding:0; list-style:none}
     .item{
-      display:flex; align-items:center; gap:14px;
-      padding:14px 16px;
-      border-radius: var(--radius);
-      text-decoration: none; color: inherit;
-      background-color: transparent; /* 背景なし */
-      transition: background .15s ease;
+      position:relative;
+      display:flex; align-items:flex-start; gap:14px;
+      padding:16px 8px;
+      border-radius:8px;
+      text-decoration:none; color:inherit;
+      transition:background .15s ease, transform .15s ease;
     }
-    .item:hover{background:#f8fafc}
-    @media (prefers-color-scheme: dark){
-      .item:hover{background:#0f172a}
-    }
+    .item:hover{ background:#f3f4f6; transform:translateY(-1px); }
     .dot{
-      flex:0 0 10px; height:10px; border-radius:50%;
-      background: var(--accent);
+      width:10px; height:10px; margin-top:.6em;
+      border-radius:50%; background:var(--accent); flex:0 0 10px;
+      box-shadow:0 0 0 3px rgba(37,99,235,.12);
     }
-    .title{font-weight:700}
-    .desc{color:var(--muted); font-size:14px}
-    .spacer{flex:1}
-    .chev{opacity:.35}
-    footer{margin-top:32px; color:var(--muted); font-size:12px; text-align:center}
+    .meta h3{margin:0; font-size:18px; line-height:1.35}
+    .meta p{margin:4px 0 0; color:var(--muted); font-size:14px}
+    .arrow{
+      margin-left:auto; align-self:center;
+      color:#9ca3af; font-size:20px;
+      transition:transform .15s ease, color .15s ease;
+    }
+    .item:hover .arrow{ transform:translateX(4px); color:#6b7280 }
+
+    footer{
+      margin-top:36px; text-align:center; color:var(--muted); font-size:12px;
+    }
+
+    /* メディア調整（スマホでの余白） */
+    @media (max-width:560px){
+      .item{padding:14px 6px}
+      .meta h3{font-size:17px}
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
+
+    <!-- ヘッダー：薄いグレー帯＋白文字 -->
+    <header class="hero">
       <h1>カドー業務ポータル（リンク集）</h1>
-      <p class="lead">社内・研究・学習メモなどの資料リンクです。必要なページを1クリックで開けます。</p>
+      <p>社内・研究・学習メモなどの資料リンクです。必要なページを1クリックで開けます。</p>
     </header>
 
-    <main class="list" aria-label="主要リンク">
-      <a class="item" href="aroma-sleep.html">
-        <span class="dot"></span>
-        <div>
-          <div class="title">アロマテラピーと睡眠</div>
-          <div class="desc">香りが睡眠に与える脳科学的メカニズム</div>
-        </div>
-        <div class="spacer"></div><div class="chev">→</div>
-      </a>
-      <!-- 以下省略：他リンクも同じ形式 -->
+    <!-- リンク一覧：枠なしフラット表示（必要に応じて増減OK） -->
+    <main aria-label="主要リンク">
+      <ul class="list">
+        <li>
+          <a class="item" href="aroma-sleep.html" aria-label="アロマテラピーと睡眠を開く">
+            <span class="dot"></span>
+            <div class="meta">
+              <h3>アロマテラピーと睡眠</h3>
+              <p>香りが睡眠に与える脳科学的メカニズム。</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="item" href="genspark-guide.html" aria-label="Gensparkガイドを開く">
+            <span class="dot"></span>
+            <div class="meta">
+              <h3>Genspark ガイド</h3>
+              <p>Gensparkの使い方とメモ。</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="item" href="statistics.html" aria-label="統計学ノートを開く">
+            <span class="dot"></span>
+            <div class="meta">
+              <h3>統計学ノート</h3>
+              <p>推定・検定・回帰の基礎まとめ。</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="item" href="notion-guide.html" aria-label="Notion活用ガイドを開く">
+            <span class="dot"></span>
+            <div class="meta">
+              <h3>Notion活用ガイド</h3>
+              <p>運用ルールやテンプレート集。</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="item" href="vpc.html" aria-label="VPCメモを開く">
+            <span class="dot"></span>
+            <div class="meta">
+              <h3>VPCメモ</h3>
+              <p>ネットワーク構成の要点。</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="item" href="netlify-GitHub.html" aria-label="Netlify-GitHub連携を開く">
+            <span class="dot"></span>
+            <div class="meta">
+              <h3>Netlify × GitHub 連携手順</h3>
+              <p>超シンプルに公開URLを作るまで。</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </li>
+      </ul>
     </main>
 
     <footer>© cado-portal — GitHub Pages</footer>
