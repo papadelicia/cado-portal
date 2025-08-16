@@ -4,107 +4,163 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>cado-portal | リンク集</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #fff;
-      color: #333;
+    :root{
+      --bg:#ffffff;
+      --text:#1f2937;       /* 濃いグレー */
+      --muted:#6b7280;      /* 説明文グレー */
+      --accent:#2563eb;     /* インジケータ（青） */
+      --header:#475569;     /* タイトル帯のグレー */
+      --radius:12px;
     }
-    .header {
-      background: #C2C2C2;  /* グレーを変更 */
-      color: #fff;
-      padding: 24px 20px;   /* 高さを少し短く */
-      text-align: center;
-      border-radius: 8px;
-      max-width: 900px;
-      margin: 20px auto;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,
+                   "Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+      color:var(--text);
+      background:var(--bg);
     }
-    .header h1 {
-      margin: 0;
-      font-size: 28px;
-      font-weight: 800;
+    .wrap{max-width:1060px; margin:0 auto; padding:0 20px 56px}
+
+    /* ヘッダー（薄い帯） */
+    .hero{
+      background:var(--header);
+      color:#fff;
+      padding:28px 24px;              /* ← 薄くしました */
+      border-radius:8px;
+      margin:20px 0 24px;             /* 余白も控えめに */
     }
-    .header p {
-      margin: 8px 0 0;
-      font-size: 14px;
-      color: #f0f0f0;
+    .hero h1{
+      margin:0 0 8px;
+      font-size:clamp(22px,4vw,34px);
+      letter-spacing:.02em;
+      font-weight:800;
     }
-    .links {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
+    .hero p{
+      margin:0;
+      font-size:clamp(14px,2.2vw,16px);
+      color:#eef2f7;                  /* 説明は少し明るめの白 */
     }
-    .links ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+
+    /* リンク一覧（シンプル行） */
+    .list{margin:12px 0 0; padding:0; list-style:none}
+    .item{
+      position:relative;
+      display:flex; align-items:flex-start; gap:14px;
+      padding:16px 8px;
+      border-radius:8px;
+      text-decoration:none; color:inherit;
+      transition:background .15s ease, transform .15s ease;
     }
-    .links li {
-      margin: 18px 0;
-      padding: 0;
-      font-size: 16px;
+    .item:hover{ background:#f3f4f6; transform:translateY(-1px); }
+    .dot{
+      width:10px; height:10px; margin-top:.6em;
+      border-radius:50%; background:var(--accent); flex:0 0 10px;
+      box-shadow:0 0 0 3px rgba(37,99,235,.12);
     }
-    .links a {
-      text-decoration: none;
-      color: #1e3a8a;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    .meta h3{margin:0; font-size:18px; line-height:1.35}
+    .meta p{margin:4px 0 0; color:var(--muted); font-size:14px}
+    .arrow{
+      margin-left:auto; align-self:center;
+      color:#9ca3af; font-size:20px;
+      transition:transform .15s ease, color .15s ease;
     }
-    .links a:hover {
-      text-decoration: underline;
+    .item:hover .arrow{ transform:translateX(4px); color:#6b7280 }
+
+    footer{
+      margin-top:36px; text-align:center; color:var(--muted); font-size:12px;
     }
-    .links li p {
-      margin: 4px 0 0 22px;
-      font-size: 14px;
-      color: #555;
-    }
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: #777;
-      margin: 40px 0;
+
+    /* メディア調整（スマホでの余白） */
+    @media (max-width:560px){
+      .item{padding:14px 6px}
+      .meta h3{font-size:17px}
     }
   </style>
 </head>
 <body>
-  <header class="header">
-    <h1>カドー業務ポータル（リンク集）</h1>
-    <p>社内・研究・学習メモなどの資料リンクです。必要なページを1クリックで開けます。</p>
-  </header>
+  <div class="wrap">
 
-  <main class="links">
-    <ul>
-      <li>
-        <a href="aroma-sleep.html">アロマテラピーと睡眠</a>
-        <p>香りが睡眠に与える脳科学的メカニズム。</p>
-      </li>
-      <li>
-        <a href="genspark-guide.html">Genspark ガイド</a>
-        <p>Gensparkの使い方とメモ。</p>
-      </li>
-      <li>
-        <a href="statistics.html">統計学ノート</a>
-        <p>推定・検定・回帰の基礎まとめ。</p>
-      </li>
-      <li>
-        <a href="notion-guide.html">Notion活用ガイド</a>
-        <p>運用ルールやテンプレート集。</p>
-      </li>
-      <li>
-        <a href="vpc.html">VPCメモ</a>
-        <p>ネットワーク構成の要点。</p>
-      </li>
-      <li>
-        <a href="netlify-GitHub.html">Netlify × GitHub 連携手順</a>
-        <p>基本プロセスの解説。</p>
-      </li>
-    </ul>
-  </main>
+    <!-- ヘッダー：薄いグレー帯＋白文字 -->
+    <header class="hero">
+      <h1>カドー業務ポータル（リンク集）</h1>
+      <p>社内・研究・学習メモなどの資料リンクです。必要なページを1クリックで開けます。</p>
+    </header>
 
-  <footer>© cado-portal — GitHub Pages</footer>
+    <!-- リンク一覧：枠なしフラット表示（必要に応じて増減OK） -->
+    <main aria-label="主要リンク">
+      <ul class="list">
+        <li>
+          <a class="item" href="aroma-sleep.html" aria-label="アロマテラピーと睡眠を開く">
+            <span class="dot"></span>
+            <div class="meta">
+              <h3>アロマテラピーと睡眠</h3>
+              <p>香りが睡眠に与える脳科学的メカニズム。</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="item" href="genspark-guide.html" aria-label="Gensparkガイドを開く">
+            <span class="dot"></span>
+            <div class="meta">
+              <h3>Genspark ガイド</h3>
+              <p>Gensparkの使い方とメモ。</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="item" href="statistics.html" aria-label="統計学ノートを開く">
+            <span class="dot"></span>
+            <div class="meta">
+              <h3>統計学ノート</h3>
+              <p>推定・検定・回帰の基礎まとめ。</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="item" href="notion-guide.html" aria-label="Notion活用ガイドを開く">
+            <span class="dot"></span>
+            <div class="meta">
+              <h3>Notion活用ガイド</h3>
+              <p>運用ルールやテンプレート集。</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="item" href="vpc.html" aria-label="VPCメモを開く">
+            <span class="dot"></span>
+            <div class="meta">
+              <h3>VPCメモ</h3>
+              <p>ネットワーク構成の要点。</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="item" href="netlify-GitHub.html" aria-label="Netlify-GitHub連携を開く">
+            <span class="dot"></span>
+            <div class="meta">
+              <h3>Netlify × GitHub 連携手順</h3>
+              <p>超シンプルに公開URLを作るまで。</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </li>
+      </ul>
+    </main>
+
+    <footer>© cado-portal — GitHub Pages</footer>
+  </div>
 </body>
 </html>
