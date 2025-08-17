@@ -66,4 +66,68 @@
       display:inline-flex;align-items:center;gap:6px;
       color:#475569;text-decoration:none;margin-top:6px
     }
-    .back:hover{text-decoration:und
+    .back:hover{text-decoration:underline}
+
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:12px}
+
+    @media (max-width:560px){
+      .card{padding:14px}
+      .hero{padding:20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- ヘッダー帯（ポータル準拠） -->
+    <header class="hero">
+      <h1>Netlify × GitHub 連携手順</h1>
+      <p>GitHubのリポジトリからNetlifyに自動デプロイする最短ガイド。</p>
+      <a class="back" href="/" aria-label="トップに戻る">← トップに戻る</a>
+    </header>
+
+    <!-- 本文カード（必要に応じて増減） -->
+    <main class="content" aria-label="NetlifyとGitHubの連携手順">
+
+      <section class="card">
+        <h2>① リポジトリを準備 <span class="label">GitHub</span></h2>
+        <ul class="steps">
+          <li>公開したいソースを <code>main</code> ブランチに置く（静的なら <code>index.html</code> だけでOK）。</li>
+          <li>必要なら <code>/docs</code> や <code>/public</code> にPDFなどのアセットを配置。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>② Netlify に接続 <span class="label">Netlify</span></h2>
+        <ul class="steps">
+          <li>Netlifyにログイン → <b>Add new site</b> → <b>Import an existing project</b>。</li>
+          <li>Git provider で <b>GitHub</b> を選択し、リポジトリを指定。</li>
+          <li>ビルド設定（静的サイトなら空でOK / または <code>Publish directory</code> に <code>.</code> や <code>dist</code>）。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>③ デプロイと確認</h2>
+        <ul class="steps">
+          <li>初回デプロイ完了後、発行されたURLにアクセスして表示を確認。</li>
+          <li>以降は <code>git push</code> で自動デプロイ。</li>
+        </ul>
+        <pre><code># 例
+git add .
+git commit -m "Initial deploy"
+git push origin main
+</code></pre>
+      </section>
+
+      <section class="card">
+        <h2>補足：PDF掲載のコツ</h2>
+        <p>PDFはリポジトリ直下に置けば <code>/your.pdf</code> でアクセス可能。ページ内に埋め込む場合は:</p>
+        <pre><code>&lt;iframe src="/seo-training.pdf" width="100%" height="800" frameborder="0"&gt;&lt;/iframe&gt;</code></pre>
+      </section>
+
+    </main>
+
+    <footer>© cado-portal — Netlify</footer>
+  </div>
+</body>
+</html>
