@@ -3,232 +3,67 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Netlify に GitHub リポジトリをつないで公開する手順</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Netlify × GitHub 連携手順 | cado-portal</title>
+  <meta name="description" content="NetlifyとGitHubを連携してサイトを公開するまでの最短手順" />
   <style>
     :root{
-      --bg: #0b1220;
-      --bg-soft: #0f172a;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --brand: #60a5fa;
-      --brand-2:#22d3ee;
-      --ring: rgba(96,165,250,.4);
-      --radius: 16px;
-      --ok:#10b981;
-      --warn:#f59e0b;
+      --bg:#ffffff;
+      --text:#1f2937;       /* 本文 */
+      --muted:#6b7280;      /* 補足 */
+      --accent:#2563eb;     /* 青 */
+      --header:#475569;     /* タイトル帯 */
+      --card:#f8fafc;       /* セクション背景 */
+      --radius:12px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN","Noto Sans JP", sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+        "Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(1200px 400px at 10% -10%, #1e293b 0%, transparent 60%),
-        radial-gradient(900px 300px at 100% 0%, #0ea5e9 0%, transparent 55%),
-        var(--bg);
+      background:var(--bg);
     }
-    .wrap{max-width:980px; margin:0 auto; padding:28px 20px 64px}
-    header{
-      position:relative; overflow:hidden;
-      border-radius:calc(var(--radius) + 8px);
-      background:
-        linear-gradient(135deg, rgba(34,211,238,.25), rgba(96,165,250,.2)),
-        linear-gradient(180deg, var(--bg-soft), rgba(17,24,39,.6));
-      padding:40px 28px;
-      box-shadow:0 20px 40px rgba(0,0,0,.35), 0 0 0 1px rgba(148,163,184,.08) inset;
+    .wrap{max-width:1060px;margin:0 auto;padding:0 20px 56px}
+
+    /* ヘッダー帯（ポータルと同じ雰囲気） */
+    .hero{
+      background:var(--header); color:#fff;
+      padding:24px; border-radius:8px; margin:20px 0 24px;
     }
-    h1{margin:0 0 10px; font-size:clamp(26px,4.5vw,40px); letter-spacing:.02em}
-    p.lead{margin:0; color:var(--muted); font-size:clamp(14px,2.2vw,16px)}
-    .chips{display:flex; gap:8px; margin-top:16px; flex-wrap:wrap}
-    .chip{
-      font-size:12px; color:#0b1220; font-weight:700; letter-spacing:.04em;
-      background: linear-gradient(90deg, var(--brand), var(--brand-2));
-      padding:6px 10px; border-radius:999px;
-    }
-    .grid{display:grid; gap:16px; margin-top:22px; grid-template-columns:repeat(1,1fr)}
-    @media (min-width:760px){ .grid{ grid-template-columns:repeat(2,1fr) } }
+    .hero h1{margin:0 0 8px;font-size:clamp(22px,4vw,34px);font-weight:800}
+    .hero p{margin:0;color:#e8eef5;font-size:clamp(14px,2.2vw,16px)}
+
+    /* 本文 */
+    .content{display:grid;gap:16px}
     .card{
+      background:var(--card);
+      border:1px solid #e5e7eb;
       border-radius:var(--radius);
-      padding:18px 18px 20px;
-      background:linear-gradient(180deg, #0f172a, #0b1324);
-      box-shadow: 0 8px 24px rgba(0,0,0,.32), 0 0 0 1px rgba(148,163,184,.08) inset;
-      outline:2px solid transparent;
+      padding:18px 18px 16px;
     }
-    .step{
-      display:flex; align-items:flex-start; gap:12px;
-      margin:14px 0 0;
+    .card h2{margin:0 0 6px;font-size:20px}
+    .card p{margin:6px 0;color:var(--muted)}
+    .steps{margin:8px 0 0;padding-left:20px}
+    .steps li{margin:.4em 0}
+    .label{
+      display:inline-block;background:#eaf2ff;color:#1e3a8a;
+      font-size:12px;padding:2px 8px;border-radius:999px;margin-left:.5em
     }
-    .num{
-      flex:0 0 34px; height:34px; border-radius:10px;
-      display:grid; place-items:center;
-      background:rgba(96,165,250,.18);
-      color:var(--brand); font-weight:800;
-      box-shadow:0 0 0 1px rgba(96,165,250,.25) inset;
+    code,kbd{
+      background:#0f172a0d;border:1px solid #e5e7eb;border-radius:6px;
+      padding:.1em .4em;font-family:ui-monospace,Menlo,Consolas,monospace;
+      font-size:.95em
     }
-    h3{margin:4px 0 8px; font-size:18px}
-    p{margin:0; color:var(--text); line-height:1.7; font-size:15px}
-    .muted{color:var(--muted)}
-    .kbd{
-      display:inline-block; padding:2px 6px; border-radius:6px;
-      border:1px solid rgba(148,163,184,.35); background:rgba(2,6,23,.6);
-      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size:12px; color:var(--text)
+    pre{
+      background:#0f172a0d;border:1px solid #e5e7eb;border-radius:8px;
+      padding:12px; overflow:auto; margin:8px 0
     }
-    .callout{
-      display:flex; gap:10px; padding:12px 14px; border-radius:12px; margin-top:12px;
-      background:rgba(16,185,129,.08); border:1px solid rgba(16,185,129,.35)
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .back{
+      display:inline-flex;align-items:center;gap:6px;
+      color:#475569;text-decoration:none;margin-top:6px
     }
-    .callout.warn{ background:rgba(245,158,11,.08); border-color:rgba(245,158,11,.35)}
-    .callout b{display:block; margin-bottom:2px}
-    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
-    .codeRow{
-      display:flex; gap:10px; align-items:center; margin-top:10px;
-      background:rgba(2,6,23,.6); border:1px solid rgba(148,163,184,.2);
-      border-radius:10px; padding:10px 12px; overflow:auto;
-    }
-    .btn{
-      border:1px solid rgba(148,163,184,.35); background:rgba(2,6,23,.6);
-      color:var(--text); border-radius:8px; padding:6px 10px; cursor:pointer;
-    }
-    .btn:hover{ border-color:var(--brand); box-shadow:0 0 0 2px rgba(96,165,250,.2) }
-    footer{margin-top:28px; color:var(--muted); font-size:12px; text-align:center}
-    .list{margin:8px 0 0; padding-left:18px}
-    .list li{margin:6px 0}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <h1>Netlify に GitHub リポジトリをつないで公開する手順</h1>
-      <p class="lead">対象リポジトリ：<b>private-portal</b>（<span class="muted">index.html はリポジトリ直下</span>）— <b>Publish directory は <span class="mono">/</span></b></p>
-      <div class="chips">
-        <span class="chip">GitHub 連携</span>
-        <span class="chip">ビルド不要（HTMLのみ）</span>
-        <span class="chip">無料で公開</span>
-      </div>
-    </header>
-
-    <main class="grid" aria-label="steps">
-      <!-- 左カラム -->
-      <section class="card">
-        <div class="step">
-          <div class="num">1</div>
-          <div>
-            <h3>Netlify でプロジェクト作成を開始</h3>
-            <p>Netlify ダッシュボード右上の <span class="kbd">Add new project</span> → <span class="kbd">Import an existing project</span> をクリック。</p>
-            <div class="callout warn"><div>⚠️</div><div><b>見つからない場合</b>：左ナビ <span class="kbd">Projects</span> ページ右上でも同じボタンがあります。</div></div>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="num">2</div>
-          <div>
-            <h3>GitHub を接続してリポジトリを選択</h3>
-            <ul class="list">
-              <li><span class="kbd">GitHub</span> を選択 → GitHub の認証画面で <b>Authorize Netlify</b> を許可。</li>
-              <li>リポジトリ一覧から <b>private-portal</b> を選択。</li>
-              <li>ブランチは <span class="kbd">main</span> を指定。</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="num">3</div>
-          <div>
-            <h3>ビルド設定（HTMLのみなので超シンプル）</h3>
-            <ul class="list">
-              <li><b>Build command</b>：空欄（入力しない）</li>
-              <li><b>Publish directory</b>：<span class="mono">/</span>（スラッシュ）</li>
-            </ul>
-            <div class="codeRow"><code class="mono">Publish directory: /</code><button class="btn" data-copy="/">コピー</button></div>
-            <div class="callout"><div>✅</div><div><b>理由</b>：<code class="mono">index.html</code> がリポジトリ直下にあるため、公開するディレクトリはルート（<code class="mono">/</code>）でOKです。</div></div>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="num">4</div>
-          <div>
-            <h3>Deploy site（公開）</h3>
-            <p><b>Deploy site</b> を押すと数十秒ほどでデプロイが完了し、<b>https://〇〇〇.netlify.app</b> のような公開URLが払い出されます。</p>
-            <div class="callout"><div>💡</div><div>公開URLはプロジェクトの <span class="kbd">Project overview</span> → サイト名の下に表示されます。</div></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 右カラム -->
-      <section class="card">
-        <div class="step">
-          <div class="num">5</div>
-          <div>
-            <h3>動作確認 & 以降の更新</h3>
-            <ul class="list">
-              <li>払い出された URL にアクセスし、ページ表示を確認。</li>
-              <li>以降は <b>GitHub の main ブランチに push</b> すると Netlify が自動で再デプロイします。</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="num">6</div>
-          <div>
-            <h3>（任意）サイト名や独自ドメイン</h3>
-            <ul class="list">
-              <li>サイト名変更：<span class="kbd">Site settings</span> → <span class="kbd">Change site name</span></li>
-              <li>独自ドメイン：<span class="kbd">Domain management</span> → <span class="kbd">Add custom domain</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="num">7</div>
-          <div>
-            <h3>トラブルシューティング</h3>
-            <ul class="list">
-              <li><b>404 や空の画面になる</b>：Publish directory が <b>/</b> か再確認。<br>
-                  もし <code class="mono">index.html</code> がサブフォルダなら、そのフォルダ名（例：<code class="mono">public</code>）を指定。</li>
-              <li><b>画像/JS/CSS が表示されない</b>：パスが絶対参照（例：<code class="mono">/img/logo.png</code>）になっていないか。相対パス推奨。</li>
-              <li><b>ビルドエラー</b>：HTMLのみの場合は Build command を空欄にする。</li>
-            </ul>
-            <div class="callout warn"><div>📌</div><div>GitHub 側でファイル名の大文字小文字が変わると、Linux環境では別ファイル扱いになります。拡張子や綴りの一致を確認してください。</div></div>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="num">8</div>
-          <div>
-            <h3>とにかく最短で公開だけしたいとき</h3>
-            <p><b>Netlify Drop</b>（<span class="muted">ドラッグ＆ドロップ公開</span>）を使う方法もあります：</p>
-            <ul class="list">
-              <li><a href="https://app.netlify.com/drop" target="_blank" rel="noopener">Netlify Drop</a> を開く</li>
-              <li><code class="mono">index.html</code> を含むフォルダをまとめてドラッグ＆ドロップ</li>
-              <li>すぐに一時的なURLが払い出されます</li>
-            </ul>
-            <div class="callout warn"><div>⚠️</div><div>単一の <code class="mono">.html</code> ファイルだけをドロップしても公開できません。<b>必ず <code class="mono">index.html</code> を含むフォルダ</b>を落としてください。</div></div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>© How-To — Netlify × GitHub（private-portal / Publish directory: “/”）</footer>
-  </div>
-
-  <script>
-    // シンプルなコピー機能
-    document.querySelectorAll('[data-copy]').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const text = btn.getAttribute('data-copy');
-        navigator.clipboard.writeText(text).then(()=>{
-          const old = btn.textContent;
-          btn.textContent = 'コピーしました';
-          setTimeout(()=>btn.textContent = old, 1200);
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+    .back:hover{text-decoration:und
