@@ -27,29 +27,26 @@
     .wrap{max-width:1060px;margin:0 auto;padding:0 20px 56px}
 
     /* ヘッダー帯（ポータルと同じ雰囲気） */
-    .hero{
-  background: var(--header, #475569) !important; /* 変数が無くても #475569 で描画 */
+     .hero {
+  background: var(--header);
   color:#fff;
-  padding:12px 20px 6px;
+  padding:12px 20px;      /* ← 上下の余白を 20px → 12px に圧縮 */
   border-radius:8px;
-  margin:16px 0 20px;
+  margin:16px 0 20px;     /* ← 周囲の余白も控えめに */
 }
 
-.hero h1{
-  margin:0 0 4px;
-  line-height:1.15;
+.hero h1 {
+  margin:0 0 6px;         /* ← タイトル下の余白を 8px → 6px に */
   font-size:clamp(22px,4vw,34px);
   letter-spacing:.02em;
   font-weight:800;
 }
 
-.hero p{
+.hero p {
   margin:0;
-  line-height:1.5;
   font-size:clamp(14px,2.2vw,16px);
   color:#eef2f7;
 }
-
 
     /* 本文 */
     .content{display:grid;gap:16px}
@@ -148,6 +145,7 @@ git push origin main
   </div>
 </body>
 </html>
+
 
 
 
